@@ -1011,6 +1011,7 @@ def generate_typed_text_line_image_from_params(text, font, bg_color, txt_color, 
 def get_valid_fonts(alphabet=None):
     valid_fonts = list()
     for fold_detail in os.walk("../../../Fonts"):
+        #print(fold_detail)
         if fold_detail[2]:
             for font_name in fold_detail[2]:
                 if ".ttf" not in font_name:
@@ -1018,10 +1019,11 @@ def get_valid_fonts(alphabet=None):
                 font_path = os.path.join(fold_detail[0], font_name)
                 to_add = True
                 if alphabet is not None:
-                    for char in alphabet:
-                        if not char_in_font(char, font_path):
-                            to_add = False
-                            break
+                    #for char in alphabet:
+                        #if not char_in_font(char, font_path):
+                            #print(char)
+                            #to_add = False
+                            #break
                     if to_add:
                         valid_fonts.append(font_path)
                 else:
